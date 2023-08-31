@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="dum.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <h3 id="title1">The Drum Kit</h3>
+        <div class="image_buttons">
+          
+          <button onclick="drumSounds(0)"   id="btn1">
+            
+            <img id="img1btn1" src="./images/tom1.png" />
+          </button>
+          
+          <button onclick="drumSounds(1)"    id="btn2">
+            
+            <img id="img2btn2" src="./images/tom2.png" />
+          </button>
+          
+          <button onclick="drumSounds(2)"     id="btn3">
+            
+            <img id="img3btn3" src="./images/tom3.png" />
+            
+            <button onclick="drumSounds(3)"      id="btn4">
+            
+              <img id="img4btn4" src="./images/tom4.png" />
+            
+              <button onclick="drumSounds(4)"     id="btn5">
+            
+                <img id="img5btn5" src="./images/crash.png" />
+            
+            
+                <button onclick="drumSounds(5)"      id="btn6">
+            
+                  <img id="img6btn6" src="./images/kick.png" />
+            
+                  <button onclick="drumSounds(6)"     id="btn7">
+            
+                    <img id="img7btn7" src="./images/snare.png" />
+
+                    <script>
+                      let buttonsArray1 = ["w",  "a", "s", "d", "j", "k", "l"];
+                      let soundEffectsArray = [
+                       "./sound_effects/tom-1.mp3",
+                       "./sound_effects/tom-2.mp3",
+                       "./sound_effects/tom-3.mp3",
+                       "./sound_effects/tom-4.mp3",
+                       "./sound_effects/crash.mp3",
+                       "./sound_effects/kick-bass.mp3",
+                       "./sound_effects/snare.mp3"
+                      ];
+                     for (let i = 0; i < buttonsArray1.length; i++) {
+                      let element0 = document.createElement("button");
+                      element.classList.add("drum");
+                      elemenet.classList.add(buttonsArray1[i]);
+                      document.getElementsByClassName("image_buttons")[0].appendChild(element);
+                     }
+                     function drumSounds(index){
+                      let audio = new Audio(soundEffectsArray[index])
+                      audio.play()
+                      document.addEventListener("press", function (event) {
+        console.log(buttonsArray1.indexOf("w"));
+        console.log(event.key);
+        playSound(buttonArray.indexOf(event.key));
+      });
+                     }
+                    </script>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
